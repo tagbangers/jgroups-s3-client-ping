@@ -7,9 +7,9 @@ Credentials are resolved by Default Credential Provider Chain: for example, you 
 
 To enable S3_CLIENT_PING, you need the following code;
 
-    ```java
-    ClassConfigurator.addProtocol((short) 1000, S3_CLIENT_PING.class);
-    ```
+```java
+ClassConfigurator.addProtocol((short) 1000, S3_CLIENT_PING.class);
+```
 
 ## Contributing
 
