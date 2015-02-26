@@ -5,6 +5,18 @@
 S3_CLIENT_PING will communicate using AWS SDK for Java.
 Credentials are resolved by Default Credential Provider Chain: for example, you can use Instance profile credentials with it, which exist within the instance metadata associated with the IAM role.
 
+## Maven
+
+```xml
+<dependency>
+	<groupId>jp.co.tagbangers</groupId>
+	<artifactId>jgroups-s3-client-ping</artifactId>
+	<version>1.0.0</version>
+</dependency>
+```
+
+## Configuration
+
 To enable S3_CLIENT_PING, you need the following code;
 
 ```java
