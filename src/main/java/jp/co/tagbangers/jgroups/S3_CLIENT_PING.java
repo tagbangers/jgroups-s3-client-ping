@@ -118,7 +118,7 @@ public class S3_CLIENT_PING extends FILE_PING {
 		if (clustername == null || addr == null) {
 			return;
 		}
-		String filename = addressToFilename(addr);//  addr instanceof org.jgroups.util.UUID? ((org.jgroups.util.UUID)addr).toStringLong() : addr.toString();
+		String filename = addressToFilename(addr);
 		String key = sanitize(clustername) + "/" + sanitize(filename);
 		try {
 			amazonS3.deleteObject(location, key);
