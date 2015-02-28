@@ -2,7 +2,7 @@
 
 ## Overview
 
-S3_CLIENT_PING will communicate using AWS SDK for Java.
+S3_CLIENT_PING is a JGroups discovery protocol which using AWS SDK for Java.
 Credentials are resolved by Default Credential Provider Chain: for example, you can use Instance profile credentials with it, which exist within the instance metadata associated with the IAM role.
 
 ## Maven
