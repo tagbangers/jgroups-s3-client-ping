@@ -11,7 +11,7 @@ Credentials are resolved by Default Credential Provider Chain: for example, you 
 <dependency>
 	<groupId>jp.co.tagbangers</groupId>
 	<artifactId>jgroups-s3-client-ping</artifactId>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 </dependency>
 ```
 
