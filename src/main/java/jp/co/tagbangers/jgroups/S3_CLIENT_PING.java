@@ -18,7 +18,7 @@ package jp.co.tagbangers.jgroups;
 
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
@@ -42,7 +42,7 @@ public class S3_CLIENT_PING extends FILE_PING {
 
 	public void init() throws Exception {
 		super.init();
-		amazonS3 = new AmazonS3Client();
+		amazonS3 = AmazonS3ClientBuilder.defaultClient();
 		if (!skip_bucket_existence_check && !amazonS3.doesBucketExist(location)) {
 			amazonS3.createBucket(location);
 		}
@@ -127,6 +127,28 @@ public class S3_CLIENT_PING extends FILE_PING {
 			}
 		} catch (Exception e) {
 			log.error("failure removing data", e);
+		}
+	}
+
+	@Override
+	protected void removeAll(String clustername) {
+		if (clustername == null) {
+			return;
+		}
+
+		try {
+			clustername = sanitize(clustername);
+			ObjectListing objectListing = amazonS3.listObjects(location, clustername);
+			for (S3ObjectSummary summary : objectListing.getObjectSummaries()) {
+				try {
+					amazonS3.deleteObject(summary.getBucketName(), summary.getKey());
+				} catch (Throwable t) {
+					log.error("failed deleting key %s: %s", summary.getKey(), t);
+				}
+
+			}
+		} catch (AmazonServiceException ex) {
+			log.error("failed deleting addresses", ex);
 		}
 	}
 

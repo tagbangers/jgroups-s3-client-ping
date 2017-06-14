@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>jp.co.tagbangers</groupId>
 	<artifactId>jgroups-s3-client-ping</artifactId>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 	<packaging>jar</packaging>
 
 	<name>JGroups S3_CLIENT_PING</name>
@@ -43,8 +43,8 @@
 	</distributionManagement>
 
 	<properties>
-		<org.jgroups.version>3.6.1.Final</org.jgroups.version>
-		<com.amazonaws.version>1.9.0</com.amazonaws.version>
+		<org.jgroups.version>3.6.7.Final</org.jgroups.version>
+		<com.amazonaws.version>1.11.145</com.amazonaws.version>
 	</properties>
 
 	<build>
