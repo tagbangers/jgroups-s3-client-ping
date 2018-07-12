@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>jp.co.tagbangers</groupId>
 	<artifactId>jgroups-s3-client-ping</artifactId>
-	<version>4.0.0</version>
+	<version>4.0.0.BUILD-SNAPSHO</version>
 	<packaging>jar</packaging>
 
 	<name>JGroups S3_CLIENT_PING</name>
